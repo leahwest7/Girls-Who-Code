@@ -1,31 +1,210 @@
-/* CSS files add styling rules to your content */
-
 body {
-  background-image: linear-gradient(#ccb3ff, #b3e6ff);
-  font-family: "Benton Sans", "Helvetica Neue", helvetica, arial, sans-serif;
-  margin: 2em;
+  background-image: url(https://cdn.glitch.com/d71cc0ec-0902-4911-be7e-0f55c5d0b21c%2Fhsf-logo-tagline-en.png?v=1595824755373);
+
+  --blue-shadow: #2B272C;
+  --blue-midtone: #cc3300;
+  --blue-lightened-midtone: #000066;
+  margin: 0;
 }
 
-h1 {
-  font-size: 40px;
-    font-family: 'Merienda', cursive; 
-  
-  color: #800040;
+@keyframes zoomOut {
+  5% {
+    transform: scale(1.1);
+  }
+
+  100% {
+    transform: scale(1);
+  }
 }
 
-h2 {
-  margin-top: 2em;
-}
-
-.question {
+.cardPositioningContainer {
+  animation: 7s zoomOut 0.1s ease backwards;
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  width: calc(100% - 2rem);
+  min-height: calc(100% - 2rem);
   display: flex;
-  margin-top: 2em;
-  flex-direction: row;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  perspective: 1200px;
+  z-index: 3;
+  pointer-events: none;
 }
 
-.answer-choice img {
-  height: 10em; 
+@media (max-width: 600px) {
+  .cardPositioningContainer {
+    top: 2rem;
+    left: 2rem;
+    width: calc(100% - 4rem);
+    min-height: calc(100% - 4rem);
+  }
 }
-img {object-fit: cover; height: 160px; width: 190px; padding: 10px;}
 
+.topFold,
+.bottomFold {
+  transition: all 1s ease;
+  height: 140px;
+  
+  width: 100%;
+  max-width: 560px;
+  border: 2px solid var(--blue-shadow);
+  box-sizing: border-box;
+  pointer-events: auto;
+}
 
+@media (max-width: 600px) {
+  .topFold,
+  .bottomFold {
+    height: 80px;
+  }
+}
+
+@keyframes topUnfold {
+  0% {
+    background-color: var(--blue-lightened-midtone);
+    transform: rotateX(-160deg);
+  }
+
+  100% {
+    background-color: white;
+    transform: rotateX(-25deg);
+  }
+}
+
+.topFold {
+  animation: 2s topUnfold 0.2s ease backwards;
+  transform-origin: bottom center;
+  transform-style: preserve-3d;
+  transform: rotateX(-25deg);
+  border-radius: 8px 8px 0 0;
+  
+}
+
+.topFold:hover {
+  transform: rotateX(-10deg);
+}
+
+.topFold:hover .topFold-front {
+  background-color: var(--blue-lightened-midtone);
+}
+
+.topFold-front {
+  transition: all 0.8s ease;
+  backface-visibility: hidden;
+  background-color: var(--blue-midtone);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px 8px 0 0;
+  color: white;
+  font-family: "Crimson Text", serif;
+  font-size: 30px;
+  text-align: center;
+  display:flex;
+  
+  
+  
+}
+
+@keyframes bottomUnfold {
+  0% {
+    background-color: var(--blue-lightened-midtone);
+    transform: rotateX(160deg);
+  }
+
+  100% {
+    background-color: var(--blue-midtone);
+    transform: rotateX(30deg);
+  }
+}
+
+.bottomFold {
+  animation: 2.5s bottomUnfold 0.1s ease backwards;
+  transform-origin: top center;
+  transform-style: preserve-3d;
+  transform: rotateX(30deg);
+  border-radius: 0 0 8px 8px;
+  background-color: var(--blue-midtone);
+}
+
+.bottomFold:hover {
+  transform: rotateX(10deg);
+}
+
+.bottomFold:hover .bottomFold-front {
+  background-color: var(--blue-lightened-midtone);
+}
+
+.bottomFold-front {
+  transition: all 0.8s ease;
+  backface-visibility: hidden;
+  background-color: #cc3300;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 0 0 8px 8px;
+  display: flex;
+  justify-content: center;
+  color: white;
+  font-family: "Crimson Text", serif;
+  font-size: 28px;
+  text-align: center;
+  
+}
+
+.card {
+  background-color: #000066;
+  padding: 70px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 560px;
+  box-sizing: border-box;
+  border: 2px solid var(--blue-shadow);
+  border-width: 0 2px;
+  pointer-events: auto;
+  max-height: 560px;
+}
+
+@media (max-width: 600px) {
+  .card {
+    padding: 36px;
+  }
+}
+
+.card-message {
+  font-size: 28px;
+  line-height: 34px;
+  margin-bottom: 0.4em;
+  font-family: "Crimson Text", serif;
+  color: white;
+}
+
+.card-message h1 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+@media (max-width: 700px) {
+  .card-message {
+    font-size: 28px;
+    line-height: 38px;
+  }
+}
+
+.card-signature {
+  font-size: 12px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+
+.card-signature img {
+  margin-right: 1rem;
+}
