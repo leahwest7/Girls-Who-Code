@@ -1,247 +1,31 @@
-/* 
+/* CSS files add styling rules to your content */
 
-This CSS file is contains the CSS rule sets for 
-    - index.html
-    - any universal elements that all pages use
-
-The CSS for the take-action.html is in take-action.css
-
-*/
-
-/************************************************/
-/************* UNIVERSAL ELEMENTS ***************/
-/************************************************/
-
-/* TODO: Customize your font properties and background color for all elements inside the <body> and <html> tags */
-body,
-html {
-  height: 100%;
-  font-size: 20px; /* Change the font size*/
-  font-family: 'Raleway', sans-serif; /* Change the font */
-  line-height: 1.5em; /* Change the line height size*/
-  margin: 0em;
-  color: white; /* Change the font color*/
-  background-image: linear-gradient(to bottom right, #F5D69B, pink); /* Change the background color */
-  box-sizing: border-box;
-  background-attachment: fixed;
+body {
+  background-image: linear-gradient(#ccb3ff, #b3e6ff);
+  font-family: "Benton Sans", "Helvetica Neue", helvetica, arial, sans-serif;
+  margin: 2em;
 }
 
 h1 {
-  letter-spacing: 5px;
-  font-size: 50px;
-  /*TODO: Change the font-family property to your linked font*/
-  font-family: 'Raleway', sans-serif;
-  color: white;
-  text-align: center;
+  font-size: 40px;
+    font-family: 'Merienda', cursive; 
+  
+  color: #800040;
 }
 
-/*TODO: Change the font-family property to your linked font*/
 h2 {
-  letter-spacing: 3px;
-  font-size: 29px;
-  font-family: 'Raleway', sans-serif;
-  color: white;
-  text-align: center;
-  line-height: 1.3em;
+  margin-top: 2em;
 }
 
-/*TODO: Change the color of a link when a person hovers over it*/
-p a {
-  color: #43d6b9ff;
-  text-decoration: none;
+.question {
+  display: flex;
+  margin-top: 2em;
+  flex-direction: row;
 }
 
-/************************************************/
-/*************** CSS FOR NAV BAR ****************/
-/************************************************/
-
-/* All of these TODOs are optional. You should change the styling based on your mockup */
-
-/* TODO (optional): Change the background color and/or border style */
-
-ul.nav-bar {
-  /* Styling for the <ul class="nav-bar"> element */
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #ffb3b3;
-  border-style: solid;
-  border-color: #f5D69B;
-  
-
+.answer-choice img {
+  height: 10em; 
 }
-
-/* TODO (optional): Change the font size*/
-
-li.nav {
-  /* Styling for the <li class="nav"> element */
-  float: right;
-  font-size: 16px;
-  
-}
-
-/* TODO (optional): Change the font color, decoration, and/or case */
-
-li.nav a {
-  /* Styling for the <a> elements in <li class="nav"> */
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  text-transform: uppercase;
-  font-weight: bold;
-  font-family: 'Raleway', sans-serif;
-}
-
-/* TODO (optional): Change the background color and/or font color when the mouse hovers over an item */
-
-li.nav a:hover {
-  /* Styling for the <a> elements when the mouse is hovering in <li class="nav"> */
-  background-color: #f5D69B ;
-  color: white;
-  
-}
+img {object-fit: cover; height: 160px; width: 190px; padding: 10px;}
 
 
-/************************************************/
-/*********** CSS FOR FLEXBOX HEADING ************/
-/************************************************/
-
-/* TODO: Review the CSS properties to the flexbox container for title and intro text */
-.flex-container {
-  display: flex; /* Set the flexbox display */
-  flex-direction: row; /* Configure the flex items to row */
-  flex-wrap: nowrap; /* Don’t wrap the flex items */
-  justify-content: center; /* Justify the flex items to the center */
-  align-items: center; /* Align the flex items to the center */
-
-  /* Design properties */
-  background-color: #999999;
-  padding: 5px;
-
-  /* Positioning properties */
-  position: absolute;
-  left: 20%;
-  right: 20%;
-  top: 40%; /* Change this value to move the box up or down */
-
-  /*Debugging Tip: Uncomment the line below to see the outline of the container*/
-  /*border-style: dotted;*/
-}
-
-/* TODO: Review the CSS properties to the flex item for the heading (the left box) */
-.heading-home {
-  padding: 2%;
-  color: #f5D69B;
-  font-size: 50px;
-  letter-spacing: 10px;
-  line-height: 60px;
-  text-align: center;
-  text-shadow: 3px 3px #A77A95;
-
-
-  /*Debugging Tip: Uncomment the line below to see the outline of the container*/
-  /*border-style: dotted;*/
-}
-
-/* TODO: Review the CSS properties to the flex item for the intro text (the right box) */
-.intro-text {
-  background-color: #f5D69B; /* Add your own background color */
-  padding: 4%;
-  margin: 3%;
-  color: black; /* Add the color of your font */
-  font-size: 22px; /* Add your font size*/
-  letter-spacing: 2px; /* Adds space between letters */
-  line-height: 1.6em; /* Adds space between lines */
-  text-align: center;
-
-  /*Debugging Tip: Uncomment the line below to see the outline of the container*/
-  /*border-style: dotted;*/
-}
-
-/************************************************/
-/*************** PARALLAX SCROLL ****************/
-/************************************************/
-
-/*-----------TEXT SECTIONS-----------*/
-
-/* TODO (optional): Change the background color and/or text alignment */
-
-.text-section {
-  background-color: lightpink;
-  padding: 20px 45px;
-  margin: 35px;
-  /*text-align: center;*/
-}
-
-/*---------IMAGE STYLING + PARALLAX PROPERTY---------*/
-
-/* TODO: Add the CSS selector for each image to the collective image rule set */
-
-.main-message,
-.image-one,.image-two,.image-three {
-  position: relative;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-color: #43d6b9ff;
-  background-size: cover;
-  min-height: 100%; /* This adjusts the height of the image */
-
-  /* TODO: Add the property to create the parallax scrolling effect here */
-  background-attachment: fixed;
-}
-
-/* TODO: Replace the current image URL with your own. This is the top image on your homepage. */
-.main-message {
-  background-image: url("https://cdn.glitch.com/13737567-f85e-484f-858b-2cfba637b4e3%2Felevator%20copy%202.jpeg?v=1592945126940");
-}
-
-/* TODO: Replace the current image URL with your own */
-.image-one {
-  background-image: url("https://cdn.glitch.com/13737567-f85e-484f-858b-2cfba637b4e3%2Fpay%20disparity.jpg?v=1592945662160");
-}
-.image-two {background-image: url("https://cdn.glitch.com/13737567-f85e-484f-858b-2cfba637b4e3%2Frace.png?v=1592954851851");}
-
-/* TODO: Add a second background image. Make sure you add this class selector to the collective image rule set above */
-
-/* TODO: Add more background images by repeating the process above */
-.image-three {background-image: url("https://cdn.glitch.com/13737567-f85e-484f-858b-2cfba637b4e3%2Fwomen-workplace-gender-discrimination.jpg?v=1592964643104");}
-/*-----------IMAGE ATTRIBUTIONS (if required)-----------*/
-.attributions {
-  font-size: 12px;
-  text-align: right;
-  float: clear;
-  margin-right: 10px;
-color: black;}
-  
-.attributions a {color: #b30000;}
-
-.citation {
-  font-size: 20px;
-  text-align: right;
-  margin-right: 10px;}
-.citation2 {
-  text-align: right;
-}
-.nav-bar {text-weight: bold;}
-.contact {padding-left: 10px;
-padding-bottom: 10px;}
-
-#contact-info {text-decoration: underline;}
-#leah-contact {text-indent: 50px;}
-#emily-contact {text-indent: 50px;}
-#bulletpoints {display: flex; text-align: left;}
-#bulletpointHeader {display: flex; text-align: center;}
-#MZ {display:flex; text-align: right;}
-#job-stats {border-radius: 10%;}
-#sh-img {border-radius: 10%;}
-/******************************************************/
-/***** CHANGE INDEX.HTML CSS BASED ON SCREEN SIZE *****/
-/******************************************************/
-
-/* TODO: Add a breakpoint if the screen is 700px or less */
-@media screen and (max-width: 700px){.flex-container{flex-wrap:wrap; top: 20%;}}
-
-/* TODO: Add additional breakpoints based on your website's design
