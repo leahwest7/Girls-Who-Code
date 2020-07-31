@@ -1,4 +1,4 @@
-# Thank You the HSF Community!
+# Thank You Veterans of Foreign Wars!
 
 Remix this app to make your own card.
 
